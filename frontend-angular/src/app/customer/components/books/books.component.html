@@ -1,0 +1,38 @@
+<div>
+    <div class="search-section">
+        <input type="text" name="search" [formControl]="apiForm.get('search')" placeholder="Search books..." />
+    </div>
+    <div class="filter-section">
+    </div>
+</div>
+<br>
+<mat-paginator *ngIf="books.length > 0" [length]="paginationOptions.length" [pageSize]="paginationOptions.pageSize"
+    [pageSizeOptions]="paginationOptions.pageSizeOptions" aria-label="Select page" (page)="onPaginateChange($event)">
+</mat-paginator>
+<table *ngIf="books.length > 0">
+    <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Book Title</th>
+            <th>Genre</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Publisher</th>
+            <th>Published Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{ book.isbn }}</td>
+            <td><a [routerLink]="" (click)="bookDetail(book.id)">{{ book.title }}</a></td>
+            <td>{{ book.genre }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.description | slice:0:50 }}...</td>
+            <td>{{ book.publisher }}</td>
+            <td>{{ book.published_date | date}}</td>
+        </tr>
+    </tbody>
+</table>
+<mat-paginator *ngIf="books.length > 0" [length]="paginationOptions.length" [pageSize]="paginationOptions.pageSize"
+    [pageSizeOptions]="paginationOptions.pageSizeOptions" aria-label="Select page" (page)="onPaginateChange($event)">
+</mat-paginator>

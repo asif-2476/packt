@@ -1,0 +1,31 @@
+<div class="container">
+<mat-card>
+<form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+  <div class="example-container">
+  
+    <!-- <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+    
+  
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required> -->
+  
+  <mat-form-field class="form-field">
+    <input matInput  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+</mat-form-field>
+<mat-form-field class="form-field">
+  <input matInput  type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+</mat-form-field>
+
+
+  
+  <button type="submit" class="btn btn-primary">Login</button>
+  </div>
+ 
+  
+</form>
+</mat-card>
+</div>
+
+
+
